@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aurelia — Lab-Grown Diamonds, Modern Luxury</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#">
+      <span class="wordmark">AURELIA</span>
+      <span class="sr-only">Aurelia</span>
+    </a>
+    <nav class="nav">
+      <div class="nav-group">
+        <button class="nav-link">Engagement</button>
+        <div class="nav-flyout">
+          <a href="#builder">Build a Ring</a>
+          <a href="#shapes">Shop by Shape</a>
+          <a href="#trending">Trending Now</a>
+        </div>
+      </div>
+      <a class="nav-link" href="#jewellery">Jewellery</a>
+      <a class="nav-link" href="#education">Education</a>
+      <a class="nav-link" href="#impact">Impact</a>
+      <a class="btn btn-ghost" href="#appointments">Book Consult</a>
+      <a class="btn btn-accent" href="#builder">Start Building</a>
+    </nav>
+  </div>
+</header>
+
+<div class="ribbon">
+  <div class="container ribbon-row">
+    <span>Lab-Grown Only</span>
+    <span>GIA / IGI Certified</span>
+    <span>Free Resizing</span>
+    <span>Insured Express Shipping</span>
+  </div>
+</div>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid left">
+      <figure class="hero-card">
+        <img src="https://placehold.co/1920x1080/FAF8F5/3A2B22?text=Hero+Ring+Image" alt="Oval two-tone ring on ivory">
+        <div class="badge">Lab-Grown Diamonds</div>
+      </figure>
+      <div class="hero-copy">
+        <p class="kicker">Aurelia Lab Diamonds</p>
+        <h1>Luxury Without Compromise</h1>
+        <p class="lede">Real diamonds, grown with modern technology and cut for brilliance. Same sparkle, smarter choice.</p>
+        <div class="cta-row">
+          <a class="btn btn-accent" href="#builder">Build your ring</a>
+          <a class="btn btn-ghost" href="#education">Why lab-grown?</a>
+        </div>
+        <ul class="specs">
+          <li>18K Gold band • Platinum prongs</li>
+          <li>GIA / IGI certificate</li>
+          <li>Made to order • 10–21 days</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHAPES -->
+  <section id="shapes" class="section band">
+    <div class="container">
+      <div class="section-head">
+        <h2>Shop by Shape</h2>
+        <div class="muted small">Solitaire & Halo — two-tone 18K gold / platinum</div>
+      </div>
+      <div class="tiles tiles-6">
+        <a class="tile" href="#builder" data-full="https://placehold.co/1600x2000/FAF8F5/3A2B22?text=Oval"><div class="zoom-wrap"><img src="https://placehold.co/1600x2000/FAF8F5/3A2B22?text=Oval" alt="Oval — solitaire"><span class="zoom-hint">Zoom</span></div><span>Oval</span></a>
+        <a class="tile" href="#builder" data-full="https://placehold.co/1600x2000/FAF8F5/3A2B22?text=Round"><div class="zoom-wrap"><img src="https://placehold.co/1600x2000/FAF8F5/3A2B22?text=Round" alt="Round — halo"><span class="zoom-hint">Zoom</span></div><span>Round</span></a>
+        <a class="tile" href="#builder" data-full="https://placehold.co/1600x2000/FAF8F5/3A2B22?text=Emerald"><div class="zoom-wrap"><img src="https://placehold.co/1600x2000/FAF8F5/3A2B22?text=Emerald" alt="Emerald — hidden halo"><span class="zoom-hint">Zoom</span></div><span>Emerald</span></a>
+        <a class="tile" href="#builder" data-full="https://placehold.co/1600x2000/FAF8F5/3A2B22?text=Pear"><div class="zoom-wrap"><img src="https://placehold.co/1600x2000/FAF8F5/3A2B22?text=Pear" alt="Pear — halo"><span class="zoom-hint">Zoom</span></div><span>Pear</span></a>
+        <a class="tile" href="#builder" data-full="https://placehold.co/1600x2000/FAF8F5/3A2B22?text=Marquise"><div class="zoom-wrap"><img src="https://placehold.co/1600x2000/FAF8F5/3A2B22?text=Marquise" alt="Marquise — solitaire"><span class="zoom-hint">Zoom</span></div><span>Marquise</span></a>
+        <a class="tile" href="#builder" data-full="https://placehold.co/1600x2000/FAF8F5/3A2B22?text=Cushion"><div class="zoom-wrap"><img src="https://placehold.co/1600x2000/FAF8F5/3A2B22?text=Cushion" alt="Cushion — halo"><span class="zoom-hint">Zoom</span></div><span>Cushion</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUILDER -->
+  <section id="builder" class="section builder">
+    <div class="container builder-grid">
+      <div class="panel">
+        <h2>Build Your Ring</h2>
+        <p class="muted">Select your specs — price updates instantly.</p>
+        <div class="grid-2 gap">
+          <div class="field">
+            <label>Carat <span id="caratVal" class="muted">1.00 ct</span></label>
+            <input type="range" id="carat" min="0.5" max="5" step="0.01" value="1.00">
+          </div>
+          <div class="field">
+            <label>Shape</label>
+            <select id="shape"><option>Oval</option><option>Round</option><option>Emerald</option><option>Pear</option><option>Marquise</option><option>Cushion</option></select>
+          </div>
+          <div class="field">
+            <label>Colour</label>
+            <select id="color"><option>D</option><option>E</option><option>F</option><option selected>G</option><option>H</option><option>I</option></select>
+          </div>
+          <div class="field">
+            <label>Clarity</label>
+            <select id="clarity"><option>IF</option><option>VVS1</option><option>VVS2</option><option selected>VS1</option><option>VS2</option><option>SI1</option></select>
+          </div>
+          <div class="field">
+            <label>Metal</label>
+            <select id="metal"><option>18K Yellow Gold</option><option>18K White Gold</option><option>18K Rose Gold</option><option>Platinum</option></select>
+          </div>
+          <div class="field">
+            <label>Certificate</label>
+            <select id="cert"><option selected>GIA</option><option>IGI</option></select>
+          </div>
+          <div class="span-2">
+            <button class="btn btn-accent full">Add to cart — <span id="price">$3,290</span></button>
+          </div>
+          <p class="tiny muted span-2">Final price updates with live supplier feed at checkout.</p>
+        </div>
+      </div>
+      <div class="panel preview">
+        <div class="preview-art">
+          <img class="builder-img" src="https://placehold.co/1600x2000/FAF8F5/3A2B22?text=Oval" alt="Preview — oval">
+        </div>
+        <ul class="muted small checklist">
+          <li>Laser inscription check</li>
+          <li>Polish & quality control</li>
+          <li>Insured express shipping</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Why Lab-Grown?</h2>
+        <div class="muted small">Same diamond structure. Smarter supply chain.</div>
+      </div>
+      <div class="compare">
+        <div class="card">
+          <h3>Lab-Grown Diamond</h3>
+          <ul class="checklist">
+            <li>Identical crystal structure to mined</li>
+            <li>Lower carbon footprint & water use</li>
+            <li>Better value carat-for-carat</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Mined Diamond</h3>
+          <ul class="list">
+            <li>Traditional extraction & logistics</li>
+            <li>Higher environmental intensity</li>
+            <li>Higher price for similar specs</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <a class="brand foot" href="#"><span class="wordmark">AURELIA</span></a>
+      <p class="muted small">Lab-grown diamond jewellery, made to order.</p>
+    </div>
+    <div>
+      <p class="foot-head">Shop</p>
+      <ul class="muted small">
+        <li><a href="#builder">Build a Ring</a></li>
+        <li><a href="#shapes">Shapes</a></li>
+        <li><a href="#education">Education</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-head">Support</p>
+      <ul class="muted small">
+        <li>Shipping & returns</li>
+        <li>Care & warranty</li>
+        <li>Ring size guide</li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-head">Contact</p>
+      <ul class="muted small">
+        <li>hello@aureliadiamonds.com</li>
+        <li>08 0000 0000</li>
+        <li>© <span id="year"></span> Aurelia</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- Lightbox -->
+<div class="lb" aria-hidden="true" role="dialog" aria-label="Image preview">
+  <div class="lb-inner">
+    <button class="lb-close" aria-label="Close preview">✕</button>
+    <img class="lb-img" alt="Zoomed product image">
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
