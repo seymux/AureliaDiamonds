@@ -1,0 +1,58 @@
+// Year & builder calculator + lightbox
+document.querySelectorAll('#year').forEach(n=>n.textContent=new Date().getFullYear());
+
+const carat=document.getElementById('carat'),caratVal=document.getElementById('caratVal'),
+      color=document.getElementById('color'),clarity=document.getElementById('clarity'),
+      metal=document.getElementById('metal'),cert=document.getElementById('cert'),
+      priceEl=document.getElementById('price');
+
+function calcPrice(){
+  const c=parseFloat(carat?.value||'1.0');
+  const colorAdj={D:800,E:650,F:500,G:350,H:200,I:120}[color?.value]||0;
+  const clarityAdj={IF:900,VVS1:700,VVS2:600,VS1:400,VS2:250,SI1:120}[clarity?.value]||0;
+  const metalAdj=(metal?.value||'').includes('Platinum')?450:0;
+  const certAdj=(cert?.value||'')==='GIA'?150:100;
+  const price=Math.round(1500 + Math.pow(c,1.18)*2200 + colorAdj + clarityAdj + metalAdj + certAdj);
+  if (priceEl) priceEl.textContent='$'+price.toLocaleString();
+  if (caratVal) caratVal.textContent=(c||1).toFixed(2)+' ct';
+}
+['input','change'].forEach(evt=>{
+  carat?.addEventListener(evt,calcPrice);
+  color?.addEventListener(evt,calcPrice);
+  clarity?.addEventListener(evt,calcPrice);
+  metal?.addEventListener(evt,calcPrice);
+  cert?.addEventListener(evt,calcPrice);
+});
+calcPrice();
+
+// Lightbox
+(function(){
+  const lb=document.querySelector('.lb');
+  const lbImg=document.querySelector('.lb-img');
+  const lbClose=document.querySelector('.lb-close');
+  if(!lb||!lbImg||!lbClose) return;
+
+  function openLB(src){
+    lbImg.src = src;
+    lb.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+  }
+  function closeLB(){
+    lb.setAttribute('aria-hidden','true');
+    lbImg.removeAttribute('src');
+    document.body.style.overflow='';
+  }
+
+  document.addEventListener('click', (e)=>{
+    const a=e.target.closest('a.tile');
+    if(a && a.dataset.full){
+      e.preventDefault();
+      openLB(a.dataset.full);
+    }
+    if(e.target===lb) closeLB();
+    if(e.target===lbClose) closeLB();
+  });
+  document.addEventListener('keydown', (e)=>{
+    if(e.key==='Escape') closeLB();
+  });
+})();
